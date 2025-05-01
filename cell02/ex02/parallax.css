@@ -1,0 +1,41 @@
+
+.parallax {
+  background-image: url("360_F_270972208_image1.jpg"); 
+  min-height: 800px; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax1 {
+    background-image: url("img2.jpeg"); 
+    min-height: 800px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font: bold;
+}
+
+.botton-centered{
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font: bold;
+
+}
+
+
+
+

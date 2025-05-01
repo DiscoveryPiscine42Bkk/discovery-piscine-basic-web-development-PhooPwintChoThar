@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's over 9000</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .calculator {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .calculator input, .calculator select, .calculator button {
+            margin: 5px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        .calculator button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .calculator button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Basic Calculator</h2>
+        <input type="text" id="leftOperand" placeholder="Left operand">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="rightOperand" placeholder="Right operand">
+        <br>
+        <button id="calculate">Try me!</button>
+    </div>
+
+    <script>
+        let alertTimeout;
+        
+        document.getElementById('calculate').addEventListener('click', function() {
+            const leftInput = document.getElementById('leftOperand').value;
+            const rightInput = document.getElementById('rightOperand').value;
+            const operator = document.getElementById('operator').value;
+            
+            if (!isValidInput(leftInput) || !isValidInput(rightInput)) {
+                alert('Error : Only positive integers are allowed');
+                console.log('Error: Only positive integers are allowed');
+                return;
+            }
+            
+            const left = parseInt(leftInput);
+            const right = parseInt(rightInput);
+            
+            if ((operator === '/' || operator === '%') && right === 0) {
+                alert("It's over 9000!");
+                console.log("It's over 9000!");
+                return;
+            }
+            
+            let result;
+            switch(operator) {
+                case '+': result = left + right; break;
+                case '-': result = left - right; break;
+                case '*': result = left * right; break;
+                case '/': result = Math.floor(left / right); break;
+                case '%': result = left % right; break;
+            }
+            
+            alert('Result: ' + result);
+            console.log('Result: ' + result);
+        });
+        
+        function isValidInput(input) {
+            return /^\d+$/.test(input) && parseInt(input) >= 0;
+        }
+        
+        function showReminder() {
+            alert('Please, use me...');
+            alertTimeout = setTimeout(showReminder, 30000);
+        }
+        
+        alertTimeout = setTimeout(showReminder, 30000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 100%;
+            height: 100%; 
+        }
+
+        td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 8px;
+        }
+
+        .aliceblue{
+            background-color: aliceblue;
+        }
+
+        .aquamarine{
+            background-color: aquamarine;
+        }
